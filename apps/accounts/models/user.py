@@ -2,7 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from apps.accounts.enums import UserRoles
+from apps.accounts.enums import Roles
 
 
 class User(AbstractUser):
@@ -14,8 +14,8 @@ class User(AbstractUser):
     is_active = models.BooleanField(default=True, verbose_name=_("Статус активности"))
     role = models.CharField(
         max_length=20,
-        choices=UserRoles.choices,
-        default=UserRoles.BUYER,
+        choices=Roles.choices,
+        default=Roles.BUYER,
         verbose_name=_("Роль пользователя"),
     )
     last_login = models.DateTimeField(
