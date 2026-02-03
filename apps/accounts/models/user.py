@@ -27,3 +27,8 @@ class User(AbstractUser):
 
     def __str__(self):
         return f"{self.username} ({self.email}) | Role: {self.role} | Active: {self.is_active}"
+
+
+    class Meta:
+        verbose_name = _("Пользователь")
+        verbose_name_plural = _("Пользователи")
