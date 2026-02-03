@@ -18,3 +18,8 @@ class AuthCode(models.Model):
 
     def __str__(self):
         return f"AuthCode for {self.user.username} - {self.code} | Used: {self.is_used}"
+
+
+    class Meta:
+        verbose_name = _("Код аутентификации")
+        verbose_name_plural = _("Коды аутентификации")

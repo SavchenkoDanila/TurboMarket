@@ -1,0 +1,1 @@
+from apps.stores.models.statistics.store_stats import StoreStats

@@ -16,3 +16,8 @@ class SellerProfile(models.Model):
 
     def __str__(self):
         return f"SellerProfile of {self.user.username}"
+
+
+    class Meta:
+        verbose_name = _("Профиль продавца")
+        verbose_name_plural = _("Профили продавцов")
