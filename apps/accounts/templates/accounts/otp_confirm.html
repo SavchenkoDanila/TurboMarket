@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Подтверждение регистрации</title>
+</head>
+<body>
+<h1>Введите код подтверждения</h1>
+
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <div>
+        <label>Код из письма:</label>
+        {{ form.code }}
+    </div>
+
+    <button type="submit">Подтвердить</button>
+</form>
+
+</body>
+</html>
