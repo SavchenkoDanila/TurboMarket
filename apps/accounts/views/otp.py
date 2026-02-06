@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 
-from apps.accounts.forms import OTPConfirmForm
+from apps.accounts.forms.otp import OTPConfirmForm
 from apps.accounts.services.otp import OTPService
 
 

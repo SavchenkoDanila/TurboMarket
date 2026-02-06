@@ -1,7 +1,7 @@
 from django.views.generic import FormView
 from django.urls import reverse_lazy
 
-from apps.accounts.forms import RegistrationForm
+from apps.accounts.forms.registration import RegistrationForm
 from apps.accounts.services.registration import RegistrationService
 
 class RegistrationView(FormView):
