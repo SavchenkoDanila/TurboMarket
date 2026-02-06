@@ -1,6 +1,9 @@
 from django.urls import path
 
-from apps.accounts.views import RegistrationView, UserLoginView, OTPConfirmView
+from apps.accounts.views.registration import RegistrationView
+from apps.accounts.views.authorization import UserLoginView
+from apps.accounts.views.otp import OTPConfirmView
+
 
 app_name = "accounts"
 
