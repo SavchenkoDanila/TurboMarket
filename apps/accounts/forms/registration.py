@@ -1,5 +1,6 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
+from captcha.fields import CaptchaField
 
 
 class RegistrationForm(forms.Form):
@@ -20,6 +21,10 @@ class RegistrationForm(forms.Form):
     confirm_password = forms.CharField(
         label=_("Подтвердите пароль"),
         widget=forms.PasswordInput(attrs={"placeholder": _("Подтвердите ваш пароль")}),
+    )
+    captcha = CaptchaField(
+        label=_("Подтверждение"), 
+        error_messages={'invalid': _("Неверный код капчи. Попробуйте снова.")},
     )
 
     def clean(self):
