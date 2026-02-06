@@ -7,27 +7,25 @@ from django.contrib.auth import get_user_model
 from apps.accounts.models.authentication import AuthCode
 from apps.accounts.services.email import send_email_with_code
 
+
 User = get_user_model()
 
 
-class RegistrationService:
+class PasswordResetService:
     @staticmethod
-    def register(email, nickname, password):
-        user = User.objects.create_user(
-            email=email,
-            username=nickname,
-            password=password,
-            is_active=False
-        )
-
+    def send_reset_code(email):
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return None
+        
         code = str(random.randint(100000, 999999))
-
         AuthCode.objects.filter(user=user, is_used=False).update(is_used=True)
+
         AuthCode.objects.create(
-            user=user, 
-            code=code, 
-            expires_at=timezone.now() + timedelta(minutes=15)
+            user=user,
+            code=code,
+            expires_at=timezone.now() + timedelta(minutes=15),
         )
 
-        send_email_with_code(email, code) 
-        return user
+        send_email_with_code(email, code)
