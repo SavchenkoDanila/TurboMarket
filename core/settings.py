@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "captcha",
 
     "apps.accounts.apps.AccountsConfig",
     "apps.stores.apps.StoresConfig",

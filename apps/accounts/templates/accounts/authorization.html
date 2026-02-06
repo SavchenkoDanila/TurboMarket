@@ -14,13 +14,21 @@
     {% csrf_token %}
     <div>
         <label>Email:</label>
-        {{ form.username }}
+        {{ form.email }}
     </div>
 
     <div>
         <label>Пароль:</label>
         {{ form.password }}
     </div>
+
+    <div>
+        <label>Введите капчу:</label>
+        {{ form.captcha }}
+    </div>
+
+
+
 
     <button type="submit">Войти</button>
 </form>
