@@ -1,0 +1,1 @@
+from apps.products.models.product_content.product_text_content import ProductTextContent

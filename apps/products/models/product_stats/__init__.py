@@ -1,0 +1,1 @@
+from apps.products.models.product_stats.product_stats import ProductStats
