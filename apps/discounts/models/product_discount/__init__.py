@@ -1,0 +1,1 @@
+from apps.discounts.models.product_discount.product_discount import ProductDiscount
