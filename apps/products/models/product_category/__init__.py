@@ -1,0 +1,1 @@
+from apps.products.models.product_category.product_category import ProductCategory
