@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect
 from apps.orders.forms.checkout_form import CheckoutForm
 from apps.orders.services.order_service import OrderService
 from apps.orders.enums.order_statuses import OrderStatuses
-from apps.orders.services.send_order import send_email_with_order
+from apps.orders.tasks.send_order_mail import send_email_with_order_task
 from apps.products.models import Product
 
 class CheckoutView(FormView):
@@ -32,5 +32,5 @@ class CheckoutView(FormView):
         order.status = OrderStatuses.COMPLETED
         order.save(update_fields=["status"])
         
-        send_email_with_order(email, order.id)
+        send_email_with_order_task.delay(email, order.id)
         return redirect("orders:success", order_id=order.id)

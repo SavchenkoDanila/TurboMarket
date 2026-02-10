@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.contrib.auth import get_user_model
 
 from apps.accounts.models.authentication import AuthCode
-from apps.accounts.services.email import send_email_with_code
+from apps.accounts.tasks.send_otp import send_email_with_code_task
 
 
 User = get_user_model()
@@ -28,4 +28,4 @@ class PasswordResetService:
             expires_at=timezone.now() + timedelta(minutes=15),
         )
 
-        send_email_with_code(email, code)
+        send_email_with_code_task.delay(email, code)
