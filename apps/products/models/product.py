@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 
 from apps.products.enums.product_statuses import ProductStatuses
 
@@ -56,6 +57,12 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} (Store: {self.store.name})"
+    
+    def get_absolute_url(self):
+        return reverse('products:product-detail', kwargs={
+            'store_slug': self.store.slug,
+            'product_slug': self.slug
+        })
 
     class Meta:
         verbose_name = _("Продукт")

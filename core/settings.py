@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "apps.stores.apps.StoresConfig",
     "apps.products.apps.ProductsConfig",
     "apps.discounts.apps.DiscountsConfig",
+    "apps.pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "core" / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -145,3 +146,7 @@ AUTH_USER_MODEL = "accounts.User"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "noreply@turboMarket.ru"
+
+
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
