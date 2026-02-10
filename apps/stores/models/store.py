@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 
@@ -42,6 +43,9 @@ class Store(models.Model):
 
     def __str__(self):
         return f"Store: {self.name} (Owner: {self.owner.username})"
+
+    def get_absolute_url(self):
+        return reverse('stores:store-detail', kwargs={'slug': self.slug})
 
 
     class Meta:

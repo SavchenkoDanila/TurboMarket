@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% block title %}{{ store.name }}{% endblock %}
+
+{% block content %}
+<div class="store-detail">
+    <h1>{{ store.name }}</h1>
+
+    <h2>Товары в магазине</h2>
+    
+    {% if products %}
+        <div class="products-grid">
+            {% for product in products %}
+                <div class="product-card">
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">{{ product.price }} руб.</p>
+                    <p class="description">{{ product.description }}</p>
+                    <a href="{{ product.get_absolute_url }}" class="btn">Подробнее</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>В этом магазине пока нет товаров.</p>
+    {% endif %}
+</div>
+{% endblock %}
