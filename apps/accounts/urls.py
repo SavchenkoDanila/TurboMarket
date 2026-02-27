@@ -8,6 +8,7 @@ from apps.accounts.views.password_reset.password_reset_new_password import Passw
 from apps.accounts.views.password_reset.password_reset_request import PasswordResetRequestView
 from apps.accounts.views.password_reset.password_reset_success import password_reset_success_view
 
+
 app_name = "accounts"
 
 urlpatterns = [

@@ -4,6 +4,7 @@ from django.conf import settings
 
 from apps.orders.enums.order_statuses import OrderStatuses
 
+
 class Order(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,

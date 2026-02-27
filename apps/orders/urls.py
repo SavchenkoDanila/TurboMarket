@@ -7,6 +7,6 @@ from apps.orders.views.success import OrderSuccessView
 app_name = "orders"
 
 urlpatterns = [
-    path('checkout/<slug:store_slug>/<slug:product_slug>/', CheckoutView.as_view(), name='checkout'),
-    path('success/<int:order_id>/', OrderSuccessView.as_view(), name='success'),
+    path('checkout/<slug:store_slug>/<slug:product_slug>/', CheckoutView.as_view(), name='order-checkout'),
+    path('success/<int:order_id>/', OrderSuccessView.as_view(), name='order-success'),
 ]

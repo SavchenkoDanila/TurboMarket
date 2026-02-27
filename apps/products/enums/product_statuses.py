@@ -7,3 +7,4 @@ class ProductStatuses(models.TextChoices):
     ACTIVE = "active", _("Активный")
     INACTIVE = "inactive", _("Неактивный")
     BLOCKED = "blocked", _("Заблокированный")
+    

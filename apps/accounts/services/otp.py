@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 from apps.accounts.models.authentication import AuthCode
 
+
 User = get_user_model()
 
 class OTPService:
@@ -25,10 +26,9 @@ class OTPService:
         if auth_code.code != code:
             raise ValueError(_("Неверный код подтверждения."))
         
-        auth_code.is_used = True
-        auth_code.save()
-
-        user.is_active = True
-        user.save()
+        auth_code.is_used = user.is_active = True
+        auth_code.save(update_fields=["is_active"])
+        user.save(update_fields=["is_active"])
 
         return user
+    

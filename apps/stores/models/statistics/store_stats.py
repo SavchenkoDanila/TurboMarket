@@ -42,3 +42,4 @@ class StoreStats(models.Model):
     class Meta:
         verbose_name = _("Статистика магазина")
         verbose_name_plural = _("Статистика магазинов")
+        

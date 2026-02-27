@@ -20,7 +20,7 @@
             
             <p>{{ product.description }}</p>
 
-            <a href="{% url 'orders:checkout' product.store.slug product.slug %}">
+            <a href="{% url 'orders:order-checkout' product.store.slug product.slug %}">
                 <button>Купить</button>
             </a>
 

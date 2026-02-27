@@ -11,6 +11,7 @@ class ProductTextContent(models.Model):
     )
     text_content = models.TextField(
         blank=True, 
+        null=True,
         verbose_name=_("Текстовое содержание продукта")
     )
     created_at = models.DateTimeField(
@@ -28,3 +29,4 @@ class ProductTextContent(models.Model):
     class Meta:
         verbose_name = _("Текстовое содержание продукта")
         verbose_name_plural = _("Текстовое содержание продуктов")
+        

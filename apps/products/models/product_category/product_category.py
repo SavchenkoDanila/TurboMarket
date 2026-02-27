@@ -40,3 +40,4 @@ class ProductCategory(models.Model):
         verbose_name = _("Категория продукта")
         verbose_name_plural = _("Категории продуктов")
         ordering = ["sort_order", "name"]
+        

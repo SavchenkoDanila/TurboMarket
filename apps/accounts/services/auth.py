@@ -6,3 +6,4 @@ class AuthService:
     def authenticate_user(request, email, password):
         user = authenticate(request, email=email, password=password)
         return user
+    

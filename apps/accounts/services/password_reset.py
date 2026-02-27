@@ -29,3 +29,4 @@ class PasswordResetService:
         )
 
         send_email_with_code_task.delay(email, code)
+        

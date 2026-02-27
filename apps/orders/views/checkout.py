@@ -7,8 +7,9 @@ from apps.orders.enums.order_statuses import OrderStatuses
 from apps.orders.tasks.send_order_mail import send_email_with_order_task
 from apps.products.models import Product
 
+
 class CheckoutView(FormView):
-    template_name = "orders/checkout.html"
+    template_name = "orders/order_checkout.html"
     form_class = CheckoutForm
 
     def dispatch(self, request, *args, **kwargs):
@@ -33,4 +34,5 @@ class CheckoutView(FormView):
         order.save(update_fields=["status"])
         
         send_email_with_order_task.delay(email, order.id)
-        return redirect("orders:success", order_id=order.id)
+        return redirect("orders:order-success", order_id=order.id)
+    

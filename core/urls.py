@@ -8,10 +8,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("captcha/", include("captcha.urls")),
     path("auth/", include("apps.accounts.urls", namespace="accounts")),
-    path("", include("apps.pages.urls", namespace="pages")),
     path("stores/", include("apps.stores.urls", namespace="stores")),
     path("orders/", include("apps.orders.urls", namespace="orders")),
     path("products/", include("apps.products.urls", namespace="products")),
+    path("", include("apps.pages.urls", namespace="pages")),
 ]
 
 if settings.DEBUG:

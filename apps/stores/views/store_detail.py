@@ -14,3 +14,4 @@ class StoreDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context["products"] = self.object.products.all()
         return context
+    

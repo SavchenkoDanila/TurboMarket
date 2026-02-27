@@ -28,3 +28,4 @@ class PasswordResetNewPasswordForm(forms.Form):
         if self.user and self.user.check_password(cleaned_data.get("password")):
             raise forms.ValidationError(_("Новый пароль не должен совпадать с текущим паролем."))
         return cleaned_data
+    

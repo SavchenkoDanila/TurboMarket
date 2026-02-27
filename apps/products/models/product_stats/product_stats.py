@@ -30,13 +30,17 @@ class ProductStats(models.Model):
         verbose_name=_("Рейтинг продукта")
     )
     created_at = models.DateTimeField(
-        auto_now_add=True, verbose_name=_("Дата создания")
+        auto_now_add=True, 
+        verbose_name=_("Дата создания")
     )
     updated_at = models.DateTimeField(
-        auto_now=True, verbose_name=_("Дата обновления")
+        auto_now=True, 
+        verbose_name=_("Дата обновления")
     )
     recalculated_at = models.DateTimeField(
-        null=True, blank=True, verbose_name=_("Дата последнего пересчета статистики")
+        null=True, 
+        blank=True, 
+        verbose_name=_("Дата последнего пересчета статистики")
     )
 
     def __str__(self):
@@ -45,3 +49,4 @@ class ProductStats(models.Model):
     class Meta:
         verbose_name = _("Статистика продукта")
         verbose_name_plural = _("Статистика продуктов")
+        

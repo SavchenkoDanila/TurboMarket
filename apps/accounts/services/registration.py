@@ -32,3 +32,4 @@ class RegistrationService:
 
         send_email_with_code_task.delay(email, code) 
         return user
+    

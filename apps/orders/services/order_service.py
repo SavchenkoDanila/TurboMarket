@@ -16,16 +16,20 @@ class OrderService:
         )
 
         total = 0
+        required_fields = ["product", "store", "price", "quantity"]
 
         for item in items:
+            if not all(item.get(field) for field in required_fields):
+                raise ValueError(f"Некорректный item: отсутствуют обязательные поля — {item}")
+            
             OrderItem.objects.create(
                 order=order,
-                product=item["product"],
-                store=item["store"],
-                price=item["price"],
-                quantity=item["quantity"],
+                product=item.get("product"),
+                store=item.get("store"),
+                price=item.get("price"),
+                quantity=item.get("quantity"),
             )
-            total += item["price"] * item["quantity"]
+            total += item.get("price") * item.get("quantity")
 
         order.total_amount = total
         order.save(update_fields=["total_amount"])

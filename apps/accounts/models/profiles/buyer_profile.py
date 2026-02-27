@@ -10,7 +10,8 @@ class BuyerProfile(models.Model):
         verbose_name=_("Пользователь"),
     )
     discount_level = models.PositiveIntegerField(
-        default=0, verbose_name=_("Уровень скидки")
+        default=0, 
+        verbose_name=_("Уровень скидки")
     )
 
     def __str__(self):
@@ -20,3 +21,4 @@ class BuyerProfile(models.Model):
     class Meta:
         verbose_name = _("Профиль покупателя")
         verbose_name_plural = _("Профили покупателей")
+        

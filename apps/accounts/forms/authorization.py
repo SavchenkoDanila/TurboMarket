@@ -17,3 +17,4 @@ class AuthorizationForm(forms.Form):
         label=_("Подтверждение"), 
         error_messages={'invalid': _("Неверный код капчи. Попробуйте снова.")},
     )
+    

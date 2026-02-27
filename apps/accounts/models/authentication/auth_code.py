@@ -23,3 +23,4 @@ class AuthCode(models.Model):
     class Meta:
         verbose_name = _("Код аутентификации")
         verbose_name_plural = _("Коды аутентификации")
+        

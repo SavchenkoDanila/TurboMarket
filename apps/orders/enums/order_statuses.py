@@ -7,5 +7,3 @@ class OrderStatuses(models.TextChoices):
     CANCELED = "canceled", _("Отменен")
     COMPLETED = "completed", _("Завершен")
     REFUNDED = "refunded", _("Возвращен")
-
-    

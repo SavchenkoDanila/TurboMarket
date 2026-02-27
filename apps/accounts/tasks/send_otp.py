@@ -11,3 +11,4 @@ def send_email_with_code_task(email, code):
     recipient_list = [email]
 
     send_mail(subject, message, from_email, recipient_list)
+    

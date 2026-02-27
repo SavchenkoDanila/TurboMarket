@@ -8,3 +8,4 @@ class PasswordResetConfirm(forms.Form):
         max_length=6,
         widget=forms.TextInput(attrs={"placeholder": _("Введите код подтверждения")}),
     )
+    

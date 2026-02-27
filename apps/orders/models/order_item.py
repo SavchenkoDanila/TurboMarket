@@ -42,4 +42,5 @@ class OrderItem(models.Model):
     
     class Meta:
         verbose_name = _("Позиция заказа")
-        verbose_name_plural = _("Позиции заказов")
+        verbose_name_plural = _("Позиции заказа")
+        
